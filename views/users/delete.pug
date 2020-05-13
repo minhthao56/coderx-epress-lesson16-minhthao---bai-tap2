@@ -1,0 +1,10 @@
+extends ../layout.pug
+block content
+    h1 Press delete what a book you want to remove (^_^!)
+    ul
+      each user in users
+        li
+          span=user.name
+          span &nbsp
+          span &nbsp
+          a(href="/users/delete/" +user.id) Delete

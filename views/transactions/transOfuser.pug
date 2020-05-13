@@ -1,0 +1,22 @@
+extends ../layout.pug
+block content
+    h2 Your book borrowed:
+    h3 Tài khoản đang đăng nhập: 
+        b #{name}
+
+    each tran in dbtransOfuser
+      li
+        span=tran.timeb
+        if tran.isComplete==="true"
+            br
+            b Status:
+            br
+            span Hoàn thành
+        if tran.isComplete==="false"
+            br
+            b Status:
+            br
+            span Chưa trả
+        span &nbsp
+        span &nbsp
+        a(href="/trans/detail/"+tran.id+"/book/"+tran.bookId+"/user/"+tran.userId) Detail

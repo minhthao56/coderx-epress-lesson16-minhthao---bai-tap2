@@ -1,0 +1,11 @@
+extends ../layout.pug
+block content
+    h1 Press delete what a book you want to remove (^_^!)
+    ul
+      each title in titles
+        li
+          span=title.tl
+          span &nbsp
+          span &nbsp
+          
+          a(href="/books/delete/" +title.id) Delete

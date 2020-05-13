@@ -1,0 +1,10 @@
+extends ../layout.pug
+block content
+    h1 Press edit what a book you want to change title (^_^!)
+    ul
+      each user in users
+        li
+          span=user.name
+          span &nbsp
+          span &nbsp
+          a(href="/users/update/" +user.id) Edit

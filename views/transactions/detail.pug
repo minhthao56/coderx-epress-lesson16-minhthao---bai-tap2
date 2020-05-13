@@ -1,0 +1,28 @@
+extends ../layout.pug
+block content
+    h1 Detail transaction
+    p 
+      b User:
+      br
+      span=user.name
+      br
+      br
+      b Titile book:
+      br
+      span=title.tl
+      br
+      br
+      b Time borrow:
+      br
+      span=tran.timeb
+      br
+      if tran.isComplete==="true"
+        br
+        b Status:
+        br
+        span Hoàn thành
+      if tran.isComplete==="false"
+        br
+        b Status:
+        br
+        span Chưa trả

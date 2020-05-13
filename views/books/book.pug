@@ -1,0 +1,23 @@
+extends ../layout.pug
+block content
+        h1 Can I help you? :)
+        form(action="/books/find", method="GET")
+          .row.pl-3.pr-3
+            input#input(type='text', name='q').form-control.mb-2
+            button#bts.btn.btn-primary.mb-5  Find
+          table.table
+            tr
+              th Titles
+              th Detail
+            each title in titles
+              tr
+                td=title.tl
+                td 
+                  a(href="/books/detail/" +title.id) Detail
+          script.
+            var input = document.getElementById("input");
+            var button = document.getElementById("bts");
+            button.addEventListener("click", function(){
+            sessionStorage.setItem("d1", input.value)
+            });
+            input.value=sessionStorage.getItem("d1");

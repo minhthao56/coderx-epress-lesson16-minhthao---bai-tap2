@@ -1,0 +1,47 @@
+html
+    head
+        link(rel='icon', href='/images/logo.png')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+        script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+    body
+    
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            a.navbar-brand(href='/') Minh Thao
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item.active
+                        a.nav-link(href='/')
+                            | Home
+                            span.sr-only (current)
+                    li.nav-item.active
+                        a.nav-link(href='/trans/add')
+                            | Borrow books
+                            span.sr-only (current)       
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(href='/books', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            | Books
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='/books') List Books
+                            a.dropdown-item(href='/books/add') Add Book
+                            a.dropdown-item(href='/books/update') Update Books
+                            a.dropdown-item(href='/books/delete') Delete Books
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(href='/users', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            | Users
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='/users') List Users
+                            a.dropdown-item(href='/users/add') Add Users
+                            a.dropdown-item(href='/users/update') Update Users
+                            a.dropdown-item(href='/users/delete') Delete Users
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(href='/trans', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            | Transactions
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='/trans') Notification Borrow
+                            a.dropdown-item(href='/trans/add') Borrow Books
+    .container                        
+        block content

@@ -1,0 +1,23 @@
+extends ../layout.pug
+block content
+    h1 Can I help you? :)
+    form(action="/users/find", method="GET")
+      .row.pl-3.pr-3
+        input#input(type='text', name='q').form-control.mb-2
+        button#bts.btn.btn-primary.mb-5 Find
+    table.table
+      tr
+        th Name
+        th Detail
+      each user in users
+        tr
+          td=user.name
+          td 
+            a(href="/users/detail/" +user.id) Detail
+    script.
+      var input = document.getElementById("input");
+      var button = document.getElementById("bts");
+      button.addEventListener("click", function(){
+      sessionStorage.setItem("d1", input.value)
+      });
+      input.value=sessionStorage.getItem("d1");

@@ -1,0 +1,13 @@
+extends ../layout.pug
+block content
+    h1 Type your title and description in box to update (^^)
+    span You are editing book: 
+    b #{user.name}
+    form#form(action='/users/update/:id', method='POST')
+      lable Name:
+      br
+      input#input(type='text', name='name')
+      br
+      //- textarea(name='description', form='form', rows='4', cols='50') Enter text here...
+      //- br
+      button#bts Press to change

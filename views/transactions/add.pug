@@ -1,0 +1,34 @@
+extends ../layout.pug
+block content
+    h1 Select your user and book which you want to borrow
+    -var current_datetime = new Date()
+    -var formatted_date = current_datetime.getHours() + " giờ " + current_datetime.getMinutes() + " phút "+", "+" Ngày " + current_datetime.getDate() +" Tháng "+ (current_datetime.getMonth() + 1) + " Năm " + current_datetime.getFullYear()
+    .input-group-prepend.mb-1
+      label(for="tilte").input-group-text Books
+    select#tilte(name='bookId', form='form').custom-select.mb-3
+      each title in titles
+        option(value= title.id)=title.tl
+    .input-group-prepend.mb-1
+      label(for="user").input-group-text Users
+    select#user(name='userId', form='form').custom-select
+      each user in users
+        option(value=user.id)=user.name
+    form#form(action='/trans/add', method='POST')
+      input#input(type='text', name='timeb' value = formatted_date, style="display: none;")
+      br
+      input#input(type='text', name='isComplete' value = "false", style="display: none;")
+      br
+      button#bts.btn.btn-primary.mb-5 Borrow
+
+
+
+
+
+
+
+
+
+
+
+
+

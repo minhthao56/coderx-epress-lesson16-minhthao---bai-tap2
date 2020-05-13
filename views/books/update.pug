@@ -1,0 +1,10 @@
+extends ../layout.pug
+block content
+    h1 Press edit what a book you want to change title (^_^!)
+    ul
+      each title in titles
+        li
+          span=title.tl
+          span &nbsp
+          span &nbsp
+          a(href="/books/update/" +title.id) Edit

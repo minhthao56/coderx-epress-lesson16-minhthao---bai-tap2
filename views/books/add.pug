@@ -1,0 +1,13 @@
+extends ../layout.pug
+block content
+    h1 Add your title and description in box (^^)
+    form#form(action='/books/add', method='POST')
+      lable Title
+      br
+      input#input(type='text', name='tl')
+      br
+      lable Description
+      br
+      textarea(name='description', form='form', rows='4', cols='50') Enter text here...
+      br
+      button#bts Add

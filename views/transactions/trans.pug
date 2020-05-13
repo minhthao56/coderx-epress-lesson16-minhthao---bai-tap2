@@ -1,0 +1,28 @@
+extends ../layout.pug
+block content
+  h2 Notification borrow below: 
+  h3 You are Admin
+  ol
+    each tran in trans
+      li
+        a(href="trans/"+tran.id+"/complete") Complete:
+        span &nbsp
+        span &nbsp
+        span=tran.timeb
+        if tran.isComplete==="true"
+          br
+          b Status:
+          br
+          span Hoàn thành
+        if tran.isComplete==="false"
+          br
+          b Status:
+          br
+          span Chưa trả
+        span &nbsp
+        span &nbsp
+        a(href="trans/detail/"+tran.id+"/book/"+tran.bookId+"/user/"+tran.userId) Detail
+        br
+        br
+  p 
+  b Click "Complete" to change status and click "Detail" to see detail.

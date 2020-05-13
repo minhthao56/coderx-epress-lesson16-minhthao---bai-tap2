@@ -1,0 +1,16 @@
+extends ../layout.pug
+block content
+    h2 Login
+    if err
+      .alert.alert-danger=err
+    form#form(action='/auth/login', method='POST')
+      lable Email
+      br
+      input#input(type='text', name='email', value= values? values.email:"").form-control
+      br
+      lable Password
+      br
+      input#input(type='text', name='pass',value= values? values.pass:"").form-control
+      br
+
+    a(href="/") Back Home

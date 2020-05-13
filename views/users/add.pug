@@ -1,0 +1,19 @@
+extends ../layout.pug
+block content
+    h1 Add your title and description in box (^^)
+    if err
+      .alert.alert-danger=err
+
+    form#form(action='/users/add', method='POST')
+      input#input(type='text', name='isAdmin' value ="false", style="display: none;")
+      input#input(type='text', name='wrongLoginCount' value = 0, style="display: none;")
+      lable Name
+      br
+      input#input(type='text', name='name').form-control
+      br
+      lable Email
+      input#input(type='text', name='email').form-control
+      br
+      lable Password
+      input#input(type='text', name='pass').form-control
+      button#bts.btn.btn-primary.mt-1 Create user
